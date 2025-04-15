@@ -78,7 +78,7 @@ class RecommendationPage extends StatelessWidget {
                       padding: const EdgeInsets.all(10),
                       itemCount: topRecommendations.length,
                       itemBuilder: (context, index) {
-                        final property = recommendations[index];
+                        final property = topRecommendations[index];
                         return Card(
                           color: Colors.grey[900],
                           margin: const EdgeInsets.only(bottom: 16),

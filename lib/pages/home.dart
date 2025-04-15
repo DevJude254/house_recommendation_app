@@ -25,9 +25,9 @@ class _HomeState extends State<Home> {
         const SnackBar(
           content: Text(
             'Please enter both rent budget and distance',
-            style: TextStyle(color: Colors.red),
+            style: TextStyle(color: Colors.white),
           ),
-          backgroundColor: Colors.lightBlueAccent,
+          backgroundColor: Colors.black,
         ),
       );
       return;
@@ -68,8 +68,8 @@ class _HomeState extends State<Home> {
 
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
-          content: Text('Error: ${e.toString()}'),
-          backgroundColor: Colors.red,
+          content: Text('Error: ${e.toString()}',style: TextStyle(color: Colors.white),),
+          backgroundColor: Colors.black,
         ),
       );
     }
