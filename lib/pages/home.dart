@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:unistay/pages/about.dart';
 import 'package:unistay/pages/recommendation_page.dart';
 
 import '../model/recommendation_model.dart';
@@ -104,12 +105,18 @@ class _HomeState extends State<Home> {
         backgroundColor: Colors.black26,
         child: Column(
           children: [
-            DrawerHeader(child: Icon(Icons.house,size: 100,color: Colors.grey.shade500)),
+            DrawerHeader(child: Image.asset('assets/housing.jpg') ),
+            const SizedBox(height: 50,),
             ListTile(
               leading: Icon(Icons.home,color: Colors.grey.shade300,),
               title: Text("H O M E", style: TextStyle(color: Colors.grey[500]),),
               onTap: ()=>Navigator.pop(context),
             ),
+            ListTile(
+              leading: Icon(Icons.info,color:Colors.grey.shade500),
+              title: Text("A B O U T", style:TextStyle(color: Colors.grey.shade500)),
+              onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>About() )),
+            )
           ],
         ),
       ),
@@ -171,11 +178,30 @@ class _HomeState extends State<Home> {
                             fontWeight: FontWeight.w400,
                             fontSize: 20),
                       ),
+                      Container(
+                          height: 200,
+                          width: 200,
+                          child: Image.asset('assets/icon.png')
+                      ),
+                      Text(
+                        "Unistay 🏡",
+                        style: TextStyle(
+                            color: Colors.green,
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Find Your Ideal Student Home, Smarter 📲",
+                        style: TextStyle(
+                            color: Colors.grey.shade400,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300),
+                      )
 
                     ],
                   ),
 
-                  const SizedBox(height: 50,),
+                  const SizedBox(height: 10,),
                   // Rent Budget Input
                   Text(
                     "Rent Budget (KSH)",
@@ -206,6 +232,7 @@ class _HomeState extends State<Home> {
                     ),
                     style: TextStyle(color: Colors.white),
                   ),
+
 
                   SizedBox(height: 20), // Space between fields
 
@@ -286,7 +313,7 @@ class _HomeState extends State<Home> {
                     },
                   ),
                   const SizedBox(
-                    height: 80,
+                    height: 50,
                   ),
                   Center(
                     child: GestureDetector(

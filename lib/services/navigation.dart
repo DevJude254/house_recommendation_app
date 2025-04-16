@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:unistay/pages/about.dart';
 
 import '../pages/home.dart';
 import '../pages/predict_page.dart';
@@ -13,10 +14,12 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _selectedIndex = 0;
 
-  // Your list of widgets (pages)
+  //list of widgets (pages)
   final List<Widget> _pages = [
-    Home(),        // Your current page
-    PredictPage(), // Your prediction page
+    Home(),
+    PredictPage(),
+    About(),
+
 
   ];
 
@@ -32,7 +35,6 @@ class _MainNavigationState extends State<MainNavigation> {
       body: _pages[_selectedIndex], // Show selected page
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Colors.black54,
-        type: BottomNavigationBarType.fixed,
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
         selectedItemColor: Colors.blue,
@@ -46,6 +48,10 @@ class _MainNavigationState extends State<MainNavigation> {
             icon: Icon(Icons.auto_graph),
             label: "Predict",
           ),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.info),
+            label: "About"
+          )
 
         ],
       ),

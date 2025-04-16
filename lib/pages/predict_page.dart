@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:unistay/model/prediction_model.dart';
+import 'package:unistay/pages/about.dart';
+import 'package:unistay/pages/home.dart';
 import 'package:unistay/pages/predictions_page.dart';
 import 'package:unistay/services/api_service.dart';
 
@@ -131,6 +133,25 @@ class _PredictPage extends State<PredictPage> {
         title: Text(
           "Rent Price Prediction",
           style: TextStyle(color: Colors.blue),
+        ),
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.black26,
+        child: Column(
+          children: [
+            DrawerHeader(child: Image.asset('assets/housing.jpg') ),
+            const SizedBox(height: 50,),
+            ListTile(
+              leading: Icon(Icons.home,color: Colors.grey.shade300,),
+              title: Text("H O M E", style: TextStyle(color: Colors.grey[500]),),
+              onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>Home())),
+            ),
+            ListTile(
+              leading: Icon(Icons.info,color:Colors.grey.shade500),
+              title: Text("A B O U T", style:TextStyle(color: Colors.grey.shade500)),
+              onTap: ()=>Navigator.push(context, MaterialPageRoute(builder: (context)=>About() )),
+            )
+          ],
         ),
       ),
       body: Padding(
